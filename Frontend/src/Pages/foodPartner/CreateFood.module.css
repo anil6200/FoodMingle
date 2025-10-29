@@ -1,0 +1,432 @@
+/* =====================
+   Background + Layout
+===================== */
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45) blur(1px);
+    z-index: 0;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.7)
+    );
+    z-index: 1;
+  }
+  
+  /* =====================
+     Floating Emojis
+  ===================== */
+  .floatingEmojis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .floatingEmojis span {
+    position: absolute;
+    font-size: 2.3rem;
+    animation: floatUp 14s linear infinite;
+    opacity: 0.9;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Random floating paths */
+  .floatingEmojis span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .floatingEmojis span:nth-child(2) {
+    left: 40%;
+    animation-delay: 3s;
+  }
+  .floatingEmojis span:nth-child(3) {
+    left: 70%;
+    animation-delay: 6s;
+  }
+  .floatingEmojis span:nth-child(4) {
+    left: 85%;
+    animation-delay: 2s;
+  }
+  .floatingEmojis span:nth-child(5) {
+    left: 25%;
+    animation-delay: 8s;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(110vh) rotate(0deg);
+      opacity: 10;
+    }
+    15% {
+      opacity: 30;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 40;
+    }
+  }
+  
+  /* =====================
+     Glass Card (Improved Transparency)
+  ===================== */
+  .createFoodCard {
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.04); /* More transparent */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    padding: 28px 16px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 32px rgba(64, 62, 62, 0.45);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    color: #ece7e7;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  }
+  
+  .createFoodCard:hover {
+    background: rgba(7, 124, 87, 0.06);
+    backdrop-filter: blur(0px) saturate(160%);
+  }
+  
+  /* =====================
+     Title & Inputs
+  ===================== */
+  .createFoodTitle {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #1d1d1c;
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .inputLabel {
+    font-size: 0.97rem;
+    color: #b2ebf2;
+  }
+  
+  .inputField,
+  .inputVideo {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .inputField::placeholder {
+    color: #b0bec5;
+  }
+  
+  /* =====================
+     Video Upload Button
+  ===================== */
+  .customVideoInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .videoInputBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(77, 208, 225, 0.12);
+    border: 2px dashed #4dd0e1;
+    border-radius: 14px;
+    padding: 22px 0 16px 0;
+    width: 100%;
+    min-height: 110px;
+    color: #4dd0e1;
+    font-size: 1.08rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 12px #00c6ff22;
+  }
+  
+  .videoInputBtn:hover {
+    background: rgba(77, 208, 225, 0.18);
+    border-color: #00c6ff;
+  }
+  
+  .videoInputBtn svg {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 4px;
+    fill: #4dd0e1;
+    transition: fill 0.2s;
+  }
+  .videoInputBtn:hover svg {
+    fill: #00c6ff;
+  }
+  
+  .tapToUploadText {
+    color: #4dd0e1;
+    font-size: 1.08rem;
+    font-weight: 500;
+  }
+  
+  .videoInputText {
+    color: #b2ebf2;
+    font-size: 0.97rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+  }
+  
+  /* =====================
+     Submit Button
+  ===================== */
+  .submitBtn {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00c6ff80;
+    transition: 0.2s;
+  }
+  
+  .submitBtn:hover {
+    background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+    box-shadow: 0 0 24px #00c6ffcc;
+  }
+  
+  /* =====================
+     Responsive
+  ===================== */
+  @media (max-width: 480px) {
+    .createFoodCard {
+      padding: 18px 8px;
+      max-width: 95vw;
+    }
+    .createFoodTitle {
+      font-size: 1.2rem;
+    }
+  }
+  .createFoodHeader {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .createFoodSubtitle {
+    font-size: 0.7rem;
+    color: rgba(19, 17, 17, 0.8);
+    margin-top: 9px;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 0px rgba(22, 23, 23, 0.4);
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+/* CreateFood.module.css - Mobile First, Glassmorphic, Dark Theme
+.createFoodContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d1b2a, #1a1a2e);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  padding: 24px 8px;
+}
+
+.createFoodCard {
+  background: rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 28px 16px;
+  width: 100%;
+  max-width: 370px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.createFoodTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #4dd0e1;
+  text-align: center;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  font-size: 0.97rem;
+  color: #b2ebf2;
+  margin-bottom: 2px;
+}
+
+.inputField, .inputVideo {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.inputField::placeholder {
+  color: #b0bec5;
+}
+
+.inputVideo {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00c6ff80;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.submitBtn:hover {
+  background: linear-gradient(90deg, #0072ff 0%, #00c6ff 100%);
+  box-shadow: 0 0 24px #00c6ffcc;
+}
+
+.customVideoInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.videoInputBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(77, 208, 225, 0.12);
+  border: 2px dashed #4dd0e1;
+  border-radius: 14px;
+  padding: 22px 0 16px 0;
+  width: 100%;
+  min-height: 110px;
+  color: #4dd0e1;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+  outline: none;
+  box-shadow: 0 2px 12px #00c6ff22;
+  position: relative;
+}
+.videoInputBtn:hover, .videoInputBtn:focus {
+  background: rgba(77, 208, 225, 0.18);
+  border-color: #00c6ff;
+}
+
+.videoInputBtn svg {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 4px;
+  display: block;
+  fill: #4dd0e1;
+  transition: fill 0.2s;
+}
+.videoInputBtn:hover svg, .videoInputBtn:focus svg {
+  fill: #00c6ff;
+}
+
+.tapToUploadText {
+  color: #4dd0e1;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.videoInputText {
+  color: #b2ebf2;
+  font-size: 0.97rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+  margin-top: 2px;
+}
+
+@media (max-width: 480px) {
+  .createFoodCard {
+    padding: 18px 4px;
+    max-width: 98vw;
+  }
+  .createFoodTitle {
+    font-size: 1.1rem;
+  }
+} */

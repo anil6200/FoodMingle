@@ -1,0 +1,157 @@
+/* Reels container: vertical scroll, snap to each video */
+.reels-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  
+  .reel {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .reel-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .reel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 16px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none; /* overlay itself doesn’t block clicks */
+  }
+  
+  .reel-overlay-gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .reel-content {
+    position: relative; /* ensures content is above gradient */
+    pointer-events: auto; /* allow clicks on button */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .reel-description {
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-flex;
+    display: flex;
+    line-clamp: 2;
+    max-width: 90vw;
+    word-break: break-word;
+    margin-bottom: 0px;
+    padding-bottom: 0px
+    ;
+  }
+  
+  .visit-store-btn {
+    display: inline-block; /* makes Link behave like button */
+    background: #ff5a5f;
+    color: #fff;
+    text-decoration: none; /* remove underline */
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    text-align: center;
+    margin-bottom: 42px;
+  }
+  
+  .visit-store-btn:hover {
+    background: #e04848;
+  }
+
+/* Right-side icon bar for each reel */
+.reel-icons-bar {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  z-index: 3;
+}
+.icon-btn {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.7rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 2px;
+  transition: background 0.2s;
+}
+.icon-btn:hover {
+  background: #ff5a5f;
+}
+.icon-count {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Bottom navigation bar */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  
+}
+.nav-link {
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:active, .nav-link:focus, .nav-link:hover {
+  color: #ff5a5f;
+}

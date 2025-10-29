@@ -1,0 +1,414 @@
+/* Background */
+.dark-auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #0d1b2a, #000);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+/* Card */
+.dark-auth-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+/* Logo */
+.auth-logo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #4dd0e1;
+}
+
+/* Title + subtitle */
+.dark-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dark-subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.dark-input {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.dark-input input {
+  flex: 1;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.dark-input input::placeholder {
+  color: #aaa;
+}
+
+.arrow-btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: #fff;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+.arrow-btn:hover {
+  opacity: 0.85;
+}
+
+/* Remember me */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 15px 0;
+  color: #888;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.divider span {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Social buttons */
+.social-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  color: white;
+}
+
+.social-btn.google {
+  background: rgba(66, 133, 244, 0.15);
+  border: 1px solid rgba(66, 133, 244, 0.4);
+}
+
+.social-btn.github {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.dark-footer {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.dark-footer a {
+  color: #4dd0e1;
+  text-decoration: none;
+}
+
+/* Futuristic Sci-Fi UI for ChooseRoleAndAction */
+
+.sci-fi-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sci-fi-glass {
+  background: rgba(30, 40, 60, 0.7);
+  border-radius: 24px;
+  box-shadow: 0 0 40px 10px #00fff7a0, 0 0 0 2px #00fff7;
+  border: 2px solid #00fff7;
+  padding: 48px 32px;
+  margin: 60px auto;
+  max-width: 400px;
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.neon-text {
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7, 0 0 24px #00fff7a0;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  letter-spacing: 2px;
+}
+
+.holo-text {
+  color: #fff;
+  background: linear-gradient(90deg, #00fff7 0%, #ff00ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  -moz-background-clip: text; 
+  color: transparent;
+  text-shadow: 0 0 12px #00fff7a0;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+
+.choose-role-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.select-role-title {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  text-shadow: 0 0 5px #00ffff;
+}
+
+.role-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+  max-width: 500px; /* container chhota rakha */
+}
+
+.role-btn {
+  font-size: 1.2rem;
+  padding: 16px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  transition: box-shadow 0.2s, background 0.2s;
+  text-transform: uppercase;
+  box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+
+.neon-btn {
+  background: linear-gradient(90deg, #00fff7 0%, #ff00ea 100%);
+  color: #fff;
+  box-shadow: 0 0 16px #00fff7a0, 0 0 32px #ff00ea80;
+  border: 2px solid #00fff7;
+  text-shadow: 0 0 8px #00fff7a0;
+}
+
+.neon-btn:hover {
+  background: linear-gradient(90deg, #ff00ea 0%, #00fff7 100%);
+  box-shadow: 0 0 32px #ff00ea, 0 0 64px #00fff7;
+}
+
+.back-btn {
+  background: rgba(30, 40, 60, 0.8);
+  border: 2px solid #ff00ea;
+  color: #ff00ea;
+  box-shadow: 0 0 12px #ff00ea80;
+}
+
+.back-btn:hover {
+  background-color: #ff00ff;
+  color: #0f2027;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.sci-fi-lights {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.sci-fi-lights::before,
+.sci-fi-lights::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+.sci-fi-lights::before {
+  width: 300px; height: 300px;
+  left: -100px; top: -100px;
+  background: radial-gradient(circle, #00fff7 0%, transparent 80%);
+}
+.sci-fi-lights::after {
+  width: 200px; height: 200px;
+  right: -60px; bottom: -60px;
+  background: radial-gradient(circle, #ff00ea 0%, transparent 80%);
+}
+
+@media (max-width: 600px) {
+  .sci-fi-glass {
+    padding: 24px 8px;
+    max-width: 95vw;
+  }
+  .role-btn {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}
+.choose-container {
+  position: relative;
+  min-height: 100vh;
+  background: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+/* Food Bubbles Full Screen */
+.food-bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0; /* behind cards and text */
+}
+
+.bubble-small { width: 60px; height: 60px; }
+.bubble-medium { width: 90px; height: 90px; }
+.bubble-large { width: 120px; height: 120px; }
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  25%  { transform: translateY(-15px); }
+  50%  { transform: translateY(-25px); }
+  75%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Title Box */
+.title-box {
+  background: #ffffffcc;
+  padding: 20px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  z-index: 2; /* above bubbles */
+  margin-bottom: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #555;
+  margin: 0;
+}
+
+/* Role Cards */
+.card-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 2; /* above bubbles */
+}
+
+.role-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  border-color: #00b894;
+  box-shadow: 0 12px 25px rgba(0, 184, 148, 0.3);
+}
+
+.role-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #2d3436;
+}
+
+.role-card p {
+  font-size: 0.95rem;
+  color: #636e72;
+}
+
+/* Back Button */
+.back-btn {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  background: #d63031;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background: #ff7675;
+}
